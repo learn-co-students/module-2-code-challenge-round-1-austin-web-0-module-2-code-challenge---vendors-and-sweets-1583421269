@@ -1,6 +1,11 @@
 class VendorSweetsController < ApplicationController
     def new
-        @vendorsweets = VendorSweet.new
+        @vendorsweet = VendorSweet.new
+    end
+    
+    def show
+        @vendorsweets = VendorSweet.find(parmas[:id])
+    end
 
     def create
         @vendorsweet = VendorSweet.create(vendorsweet_params)
@@ -15,6 +20,6 @@ class VendorSweetsController < ApplicationController
 
 
     def vendorsweet_params
-        params.require(:vendorsweet).permit(:sweet_id, :vendor_id, :price)
+        params.require(:vendor_sweet).permit(:sweet_id, :vendor_id, :price)
     end 
 end

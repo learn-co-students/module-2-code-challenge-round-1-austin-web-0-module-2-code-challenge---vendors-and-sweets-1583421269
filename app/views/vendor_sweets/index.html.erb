@@ -1,5 +1,5 @@
-<h1> Create a VendorSweet</h1>
-<%= form_for @vendor_sweet do |x| %>
+
+<%= form_for @vendorsweet do |x| %>
     <%= x.collection_select :vendor_id, Vendor.all, :id, :name%>
     <%= x.collection_select :sweet_id, Sweet.all, :id, :name%>
     <%= x.number_field :price %>
